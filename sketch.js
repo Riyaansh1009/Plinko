@@ -1,7 +1,7 @@
-var Engine = Matter.Engine,
-    World = Matter.World,
-    Events = Matter.Events,
-    Bodies = Matter.Bodies; 
+var Engine = Matter.Engine;
+const World = Matter.World;
+var Events = Matter.Events;
+var  Bodies = Matter.Bodies; 
 var particles = [];
 var plinkos = [];
 var divisions =[];
@@ -110,16 +110,27 @@ function draw() {
    for (var k = 0; k < divisions.length; k++) 
    {
      divisions[k].display();
+
+    
+   }
+   if(keyDown(UP_ARROW)){
+    if(gameState!=="end")
+    {
+        count++;
+       particle=new Particle(mouseX, 10, 10, 10); 
+      
+    }   
    }
  
 }
 
 
-function mousePressed()
-{
-  if(gameState!=="end")
-  {
-      count++;
-     particle=new Particle(mouseX, 10, 10, 10); 
-  }   
-}
+// function mousePressed()
+// {
+//   if(gameState!=="end")
+//   {
+//       count++;
+//      particle=new Particle(mouseX, 10, 10, 10); 
+    
+//   }   
+// }
